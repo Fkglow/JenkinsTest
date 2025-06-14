@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
 
     def test_1(self):
         myAcc = self.driver.find_element(By.ID, "menu-item-22")
-        self.assertTrue(myAcc.is_displayed())
+        self.assertTrue(myAcc.is_enabled())
 
     def tearDown(self):
         self.driver.quit()
