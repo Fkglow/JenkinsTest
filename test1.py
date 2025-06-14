@@ -1,11 +1,14 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 class Test(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.maximize_window()
         self.driver.get("http://seleniumdemo.com/")
 
