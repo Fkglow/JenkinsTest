@@ -1,3 +1,4 @@
+import allure
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -12,6 +13,7 @@ class Test(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.get("http://seleniumdemo.com/")
 
+    @allure.title("Basic test")
     def test_1(self):
         myAcc = self.driver.find_element(By.ID, "menu-item-22")
         self.assertTrue(myAcc.is_enabled())
