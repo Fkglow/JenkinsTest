@@ -14,10 +14,11 @@ class Test(unittest.TestCase):
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.maximize_window()
         self.driver.get("http://seleniumdemo.com/?page_id=7")
+        EMAIL = "aaaa@mail.com"
 
     @allure.title("Basic test")
     def test_1(self):
-        email = os.environ.get("TEST_EMAIL")
+        email = os.environ.get("EMAIL")
         self.driver.find_element(By.ID, "reg_email").send_keys(email)
         self.driver.find_element(By.ID, "reg_password").send_keys("test")
         myAcc = self.driver.find_element(By.ID, "menu-item-22")
