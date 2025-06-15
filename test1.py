@@ -1,3 +1,5 @@
+import os
+
 import allure
 import unittest
 from selenium import webdriver
@@ -11,10 +13,12 @@ class Test(unittest.TestCase):
         chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.maximize_window()
-        self.driver.get("http://seleniumdemo.com/")
+        self.driver.get("http://seleniumdemo.com/?page_id=7")
 
     @allure.title("Basic test")
     def test_1(self):
+        email = os.environ.get("TEST_EMAIL")
+        self.driver.find_element(By.ID, "reg_email").send_keys(email)
         myAcc = self.driver.find_element(By.ID, "menu-item-22")
         self.assertTrue(myAcc.is_enabled())
 
