@@ -6,7 +6,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'MESSAGE', defaultValue: 'Hello world!', description: "Wow! Message is displayed! :) ")
+        string(name: 'MESSAGE', defaultValue: 'Hello world!', description: "Message to be displayed.")
     }
 
     stages {
