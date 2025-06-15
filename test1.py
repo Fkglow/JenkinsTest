@@ -18,7 +18,8 @@ class Test(unittest.TestCase):
     @allure.title("Basic test")
     def test_1(self):
         # email = os.environ.get("TEST_EMAIL")
-        # self.driver.find_element(By.ID, "reg_email").send_keys(email)
+        self.driver.find_element(By.ID, "reg_email").send_keys("test")
+        self.driver.find_element(By.ID, "reg_password").send_keys("test")
         myAcc = self.driver.find_element(By.ID, "menu-item-22")
         self.assertTrue(myAcc.is_enabled())
 
