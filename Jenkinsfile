@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    triggers {
-        cron('2 * * * *')
-    }
+//     triggers {
+// //         cron('2 * * * *')
+//     }
 
     parameters {
         string(name: 'MESSAGE', defaultValue: 'Hello world!', description: "Message to be displayed.")
